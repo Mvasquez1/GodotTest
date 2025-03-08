@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3ndb5r5psy0u"]
+
+[ext_resource type="Script" path="res://Scripts/Door.cs" id="1_6cwem"]
+[ext_resource type="Texture2D" uid="uid://b76gsn11bekic" path="res://Assets/Textures/Door/doorAlt1.png" id="1_8055h"]
+
+[sub_resource type="Animation" id="Animation_1d7wm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vyexb"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r1q56"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mf5y8"]
+_data = {
+"RESET": SubResource("Animation_1d7wm"),
+"close": SubResource("Animation_vyexb"),
+"open": SubResource("Animation_r1q56")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7sh6"]
+shading_mode = 0
+albedo_texture = ExtResource("1_8055h")
+
+[node name="Door" type="Node3D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mf5y8")
+}
+
+[node name="Hinge" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.770363, 1.04458, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Hinge" node_paths=PackedStringArray("animPlayer")]
+transform = Transform3D(1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 0.770363, 0.155425, -0.1)
+material_override = SubResource("StandardMaterial3D_e7sh6")
+use_collision = true
+size = Vector3(1.6, 2.1, 0.3)
+script = ExtResource("1_6cwem")
+animPlayer = NodePath("../../AnimationPlayer")
