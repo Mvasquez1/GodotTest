@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eedevtflwrih"
-path.s3tc="res://.godot/imported/Ground.jpg-c3b099281cbaf24864673c9a4315438b.s3tc.ctex"
+uid="uid://b76gsn11bekic"
+path.s3tc="res://.godot/imported/doorAlt1.png-aa890a40cb42cd08f3d4ed9681c91d08.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Ground.jpg"
-dest_files=["res://.godot/imported/Ground.jpg-c3b099281cbaf24864673c9a4315438b.s3tc.ctex"]
+source_file="res://Assets/Textures/Door/doorAlt1.png"
+dest_files=["res://.godot/imported/doorAlt1.png-aa890a40cb42cd08f3d4ed9681c91d08.s3tc.ctex"]
 
 [params]
 
