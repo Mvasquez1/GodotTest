@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 /// The Door class takes an animation player and plays an animation when the player interacts with it.
 /// </summary>
 public partial class Door : CsgBox3D
-
 {
-
 
 	private bool toggle = false;
 	private bool interactable = true;
+	private AudioStreamPlayer3D doorCloseSound;
+	private AudioStreamPlayer3D doorOpenSound;
+	private AnimationPlayer doorAnimPlayer;
 
 	[Export]
 	private AnimationPlayer animPlayer {get; set; }
@@ -20,7 +21,11 @@ public partial class Door : CsgBox3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		doorCloseSound = GetNode<AudioStreamPlayer3D>("DoorCloseSFX");
+		doorOpenSound = GetNode<AudioStreamPlayer3D>("DoorOpenSFX");
+		doorAnimPlayer = GetNode<AnimationPlayer>("../../AnimationPlayer");
+		doorAnimPlayer.AnimationFinished += OnAnimFinished;
+		doorAnimPlayer.AnimationStarted += OnAnimStarted;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,6 +59,22 @@ public partial class Door : CsgBox3D
 			}
 			
 			Task.Run(DoorCountDown);
+		}
+	}
+
+	private void OnAnimFinished(StringName anim)
+	{
+		if(anim == "close")
+		{
+			doorCloseSound.Play();
+		}
+	}
+
+	private void OnAnimStarted(StringName anim)
+	{
+		if(anim == "open")
+		{
+			doorOpenSound.Play();
 		}
 	}
 }
