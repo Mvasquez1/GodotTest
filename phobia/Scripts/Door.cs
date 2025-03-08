@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 /// </summary>
 public partial class Door : CsgBox3D
 {
-
 	private bool toggle = false;
 	private bool interactable = true;
 	private AudioStreamPlayer3D doorCloseSound;
@@ -24,6 +23,7 @@ public partial class Door : CsgBox3D
 		doorCloseSound = GetNode<AudioStreamPlayer3D>("DoorCloseSFX");
 		doorOpenSound = GetNode<AudioStreamPlayer3D>("DoorOpenSFX");
 		doorAnimPlayer = GetNode<AnimationPlayer>("../../AnimationPlayer");
+		
 		doorAnimPlayer.AnimationFinished += OnAnimFinished;
 		doorAnimPlayer.AnimationStarted += OnAnimStarted;
 	}
