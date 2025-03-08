@@ -7,7 +7,7 @@ using System;
 /// </summary>
 public partial class Door : CsgBox3D
 {
-	private bool toggle = false;
+	private bool doorClosed = false;
 	private bool interactable = true;
 	private AudioStreamPlayer3D doorCloseSound;
 	private AudioStreamPlayer3D doorOpenSound;
@@ -44,12 +44,12 @@ public partial class Door : CsgBox3D
 		if (interactable == true)
 		{
 			interactable = false;
-			toggle = !toggle;
-			if (toggle == false)
+			doorClosed = !doorClosed;
+			if (doorClosed == false)
 			{
 				doorAnimPlayer.Play("close");
 			}
-			if (toggle == true)
+			if (doorClosed == true)
 			{
 				doorAnimPlayer.Play("open");
 			}

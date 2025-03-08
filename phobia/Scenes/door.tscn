@@ -10,7 +10,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/path = NodePath("DoorHinge:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +25,7 @@ resource_name = "close"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/path = NodePath("DoorHinge:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -40,7 +40,7 @@ resource_name = "open"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/path = NodePath("DoorHinge:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -71,10 +71,10 @@ libraries = {
 [node name="DoorTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Hinge" type="Node3D" parent="."]
+[node name="DoorHinge" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.770363, 1.04458, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Hinge" node_paths=PackedStringArray("doorAnimPlayer", "doorTimer")]
+[node name="CSGBox3D" type="CSGBox3D" parent="DoorHinge" node_paths=PackedStringArray("doorAnimPlayer", "doorTimer")]
 transform = Transform3D(1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 0.770363, 0.155425, -0.1)
 material_override = SubResource("StandardMaterial3D_e7sh6")
 use_collision = true
@@ -83,12 +83,12 @@ script = ExtResource("1_6cwem")
 doorAnimPlayer = NodePath("../../AnimationPlayer")
 doorTimer = NodePath("../../DoorTimer")
 
-[node name="DoorCloseSFX" type="AudioStreamPlayer3D" parent="Hinge/CSGBox3D"]
+[node name="DoorCloseSFX" type="AudioStreamPlayer3D" parent="DoorHinge/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.74228e-08, 0, -8.74228e-08, 1, 0, -1.2, 0.1)
 stream = ExtResource("3_whg0j")
 volume_db = -25.714
 
-[node name="DoorOpenSFX" type="AudioStreamPlayer3D" parent="Hinge/CSGBox3D"]
+[node name="DoorOpenSFX" type="AudioStreamPlayer3D" parent="DoorHinge/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.74228e-08, 0, -8.74228e-08, 1, 0, -1.2, 0.1)
 stream = ExtResource("4_ebgmw")
 volume_db = -25.905
