@@ -9,22 +9,37 @@ public partial class Player : CharacterBody3D
 
 	private Node3D head;
 	private Camera3D cam;
+	private Node3D hand;
+	private SpotLight3D flashlight;
 	
 	public override void _Ready(){
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		head = GetNode<Node3D>("Head");
 		cam = GetNode<Camera3D>("Head/Camera3D");
+		hand = GetNode<Node3D>("Hand");
+		flashlight = GetNode<SpotLight3D>("Hand/SpotLight3D");
 	}
 	
 	public override void _Input(InputEvent @event){
 		if(@event is InputEventMouseMotion m){
 			head.RotateY(-m.Relative.X * camSensitivity);
 			cam.RotateX(-m.Relative.Y * camSensitivity);
+			hand.RotateY(-m.Relative.X * camSensitivity);
+			flashlight.RotateX(-m.Relative.Y * camSensitivity);
 			
 			Vector3 camRot = cam.Rotation;
 			camRot.X = Mathf.Clamp(camRot.X,
 				Mathf.DegToRad(-80f), Mathf.DegToRad(80f));
 			cam.Rotation = camRot;
+			
+			Vector3 handRot = hand.Rotation;
+			handRot.X = Mathf.Clamp(handRot.X, Mathf.DegToRad(-80f), Mathf.DegToRad(80f));
+			hand.Rotation = handRot;
+			
+			Vector3 flashlightRot = flashlight.Rotation;
+			flashlightRot.X = Mathf.Clamp(flashlightRot.X, Mathf.DegToRad(-80f), Mathf.DegToRad(80f));
+			flashlight.Rotation = flashlightRot;
+			
 		}
 		else if (@event is InputEventKey k && k.Keycode == Key.Escape){
 			Input.MouseMode = Input.MouseModeEnum.Visible;
@@ -63,5 +78,6 @@ public partial class Player : CharacterBody3D
 
 		Velocity = velocity;
 		MoveAndSlide();
+		
 	}
 }
