@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkpyarrclkey2"]
+
+[ext_resource type="Texture2D" uid="uid://c0uth35qq6ap7" path="res://Scenes/hallway.png" id="1_lwy1g"]
+[ext_resource type="AudioStream" uid="uid://c1wib1828ut2b" path="res://Assets/Music/horror1.mp3" id="2_k2vjf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_urljg"]
+texture = ExtResource("1_lwy1g")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2jtw"]
+bg_color = Color(0.190762, 0.190762, 0.190762, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 0
+offset_left = 4.0
+offset_top = -643.0
+offset_right = 1204.0
+offset_bottom = 57.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_urljg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -122.0
+offset_right = 151.0
+offset_bottom = 3.0
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_y2jtw")
+text = "Start
+"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_y2jtw")
+text = "Settings
+"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_y2jtw")
+text = "Quit
+"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_k2vjf")
+autoplay = true
