@@ -7,14 +7,17 @@ using System;
 /// </summary>
 public partial class Door : CsgBox3D
 {
-	private bool toggle = false;
+
+	private bool doorClosed = false;
 	private bool interactable = true;
 	private AudioStreamPlayer3D doorCloseSound;
 	private AudioStreamPlayer3D doorOpenSound;
-	
+	private Timer doorTimer;
+
 
 	[Export]
 	private AnimationPlayer doorAnimPlayer {get; set; }
+
 
 	[Export]
 
@@ -25,6 +28,7 @@ public partial class Door : CsgBox3D
 	{
 		doorCloseSound = GetNode<AudioStreamPlayer3D>("DoorCloseSFX");
 		doorOpenSound = GetNode<AudioStreamPlayer3D>("DoorOpenSFX");
+
 
 		doorAnimPlayer.AnimationFinished += OnAnimFinished;
 		doorAnimPlayer.AnimationStarted += OnAnimStarted;
@@ -44,12 +48,14 @@ public partial class Door : CsgBox3D
 		if (interactable == true)
 		{
 			interactable = false;
-			toggle = !toggle;
-			if (toggle == false)
+
+			doorClosed = !doorClosed;
+			if (doorClosed == false)
 			{
 				doorAnimPlayer.Play("close");
 			}
-			if (toggle == true)
+			if (doorClosed == true)
+
 			{
 				doorAnimPlayer.Play("open");
 			}

@@ -1,7 +1,9 @@
+
 [gd_scene load_steps=5 format=3 uid="uid://bkpyarrclkey2"]
 
 [ext_resource type="Texture2D" uid="uid://c0uth35qq6ap7" path="res://Scenes/hallway.png" id="1_lwy1g"]
 [ext_resource type="AudioStream" uid="uid://c1wib1828ut2b" path="res://Assets/Music/horror1.mp3" id="2_k2vjf"]
+
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_urljg"]
 texture = ExtResource("1_lwy1g")
