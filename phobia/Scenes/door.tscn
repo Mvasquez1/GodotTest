@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Door.cs" id="1_6cwem"]
 [ext_resource type="Texture2D" uid="uid://b76gsn11bekic" path="res://Assets/Textures/Door/doorAlt1.png" id="1_8055h"]
-
 [ext_resource type="AudioStream" uid="uid://c7m18hatnhk7c" path="res://Assets/SFX/Door/440261__adriann__door-slam-no-reverb.wav" id="3_whg0j"]
 [ext_resource type="AudioStream" uid="uid://b0onr8qsf2lho" path="res://Assets/SFX/Door/434002__snake16547__wood-door-sound.wav" id="4_ebgmw"]
-
 
 [sub_resource type="Animation" id="Animation_1d7wm"]
 length = 0.001
