@@ -74,14 +74,13 @@ one_shot = true
 [node name="Hinge" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.770363, 1.04458, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Hinge" node_paths=PackedStringArray("doorAnimPlayer", "doorTimer")]
+[node name="CSGBox3D" type="CSGBox3D" parent="Hinge" node_paths=PackedStringArray("doorAnimPlayer")]
 transform = Transform3D(1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 0.770363, 0.155425, -0.1)
 material_override = SubResource("StandardMaterial3D_e7sh6")
 use_collision = true
 size = Vector3(1.6, 2.1, 0.3)
 script = ExtResource("1_6cwem")
 doorAnimPlayer = NodePath("../../AnimationPlayer")
-doorTimer = NodePath("../../DoorTimer")
 
 [node name="DoorCloseSFX" type="AudioStreamPlayer3D" parent="Hinge/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.74228e-08, 0, -8.74228e-08, 1, 0, -1.2, 0.1)
