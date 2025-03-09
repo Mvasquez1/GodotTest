@@ -27,3 +27,17 @@ shape = SubResource("CapsuleShape3D_yag4e")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
 mesh = SubResource("CapsuleMesh_0ac2j")
+
+[node name="Hand" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0369521, 1.50232, -0.507911)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Hand"]
+light_color = Color(0.776775, 0.68906, 0.633984, 1)
+light_volumetric_fog_energy = 0.2
+spot_range = 9.003
+spot_angle = 27.73
+spot_angle_attenuation = 3.0
+
+[node name="BatteryTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true

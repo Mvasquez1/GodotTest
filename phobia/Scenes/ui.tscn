@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Scripts/UI.cs" id="1_gqvtt"]
 
 [node name="UI" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1150.0
@@ -11,6 +10,7 @@ offset_bottom = 647.0
 script = ExtResource("1_gqvtt")
 
 [node name="DoorOverlay" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -24,3 +24,9 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Press E to Open or Close Door"
+
+[node name="Battery" type="Label" parent="."]
+layout_mode = 1
+offset_right = 94.0
+offset_bottom = 23.0
+text = "Sample Test"
