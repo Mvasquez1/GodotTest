@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkpyarrclkey2"]
 
-[ext_resource type="Texture2D" uid="uid://c0uth35qq6ap7" path="res://Scenes/hallway.png" id="1_lwy1g"]
+[ext_resource type="Texture2D" uid="uid://c0uth35qq6ap7" path="res://Assets/hallway.png" id="1_lwy1g"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_urljg"]
 texture = ExtResource("1_lwy1g")
@@ -34,10 +34,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -122.0
-offset_right = 151.0
-offset_bottom = 3.0
+offset_left = -1.0
+offset_top = -167.0
+offset_right = 149.0
+offset_bottom = -42.0
 grow_vertical = 0
 theme_override_constants/separation = 10
 

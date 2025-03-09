@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0uth35qq6ap7"
-path="res://.godot/imported/hallway.png-4662dd292f74946edbdb928fdd92b522.ctex"
+uid="uid://bvvrh0buepgye"
+path="res://.godot/imported/halloweenbits_texture.png-0fe230ef3f1e9a813af0d951f18403d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/hallway.png"
-dest_files=["res://.godot/imported/hallway.png-4662dd292f74946edbdb928fdd92b522.ctex"]
+source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/textures/halloweenbits_texture.png"
+dest_files=["res://.godot/imported/halloweenbits_texture.png-0fe230ef3f1e9a813af0d951f18403d8.ctex"]
 
 [params]
 
