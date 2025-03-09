@@ -9,6 +9,7 @@ public partial class UI : Control
 {
 	// Called when the node enters the scene tree for the first time.
 
+
 	private int batteryPercentage;
 	private Player player;
 	private Label battery;
@@ -33,11 +34,13 @@ public partial class UI : Control
 
 	private void OnDoorHovered()
 	{
+
 		doorOverlay.Visible = true;
 	}
 
 	private void OnDoorNotHovered()
 	{
+
 		doorOverlay.Visible = false;
 	}
 
@@ -71,6 +74,7 @@ public partial class UI : Control
 		{
 			battery.SelfModulate = Colors.Red;
 		}
+
 	}
 	
 }

@@ -7,21 +7,28 @@ using System;
 /// </summary>
 public partial class Door : CsgBox3D
 {
+
 	private bool doorClosed = false;
 	private bool interactable = true;
 	private AudioStreamPlayer3D doorCloseSound;
 	private AudioStreamPlayer3D doorOpenSound;
 	private Timer doorTimer;
 
+
 	[Export]
 	private AnimationPlayer doorAnimPlayer {get; set; }
+
+
+	[Export]
+
+	private Timer doorTimer {get; set; }
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		doorCloseSound = GetNode<AudioStreamPlayer3D>("DoorCloseSFX");
 		doorOpenSound = GetNode<AudioStreamPlayer3D>("DoorOpenSFX");
-		doorTimer = GetNode<Timer>("../../DoorTimer");
+
 
 		doorAnimPlayer.AnimationFinished += OnAnimFinished;
 		doorAnimPlayer.AnimationStarted += OnAnimStarted;
@@ -41,12 +48,14 @@ public partial class Door : CsgBox3D
 		if (interactable == true)
 		{
 			interactable = false;
+
 			doorClosed = !doorClosed;
 			if (doorClosed == false)
 			{
 				doorAnimPlayer.Play("close");
 			}
 			if (doorClosed == true)
+
 			{
 				doorAnimPlayer.Play("open");
 			}

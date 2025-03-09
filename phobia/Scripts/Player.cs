@@ -6,16 +6,20 @@ public partial class Player : CharacterBody3D
 	public const float speed = 5.0f;
 	public const float jumpVelocity = 4.5f;
 	public const float camSensitivity = 0.006f;
+
 	[Signal]
 	public delegate void BatteryDepletedEventHandler();
 	public int flashlightBattery = 100;
+
 	private Node3D head;
 	private Camera3D cam;
 	private Node3D hand;
 	private SpotLight3D flashlight;
+
 	private Timer batteryTimer;
 	private double timeLeft;
 	private bool flashlightOn = true;
+
 	
 	public override void _Ready(){
 		Input.MouseMode = Input.MouseModeEnum.Captured;
@@ -23,10 +27,11 @@ public partial class Player : CharacterBody3D
 		cam = GetNode<Camera3D>("Head/Camera3D");
 		hand = GetNode<Node3D>("Hand");
 		flashlight = GetNode<SpotLight3D>("Hand/SpotLight3D");
+
 		batteryTimer = GetNode<Timer>("BatteryTimer");
 		batteryTimer.Timeout += OnBatteryTimerTimeOut;
 		timeLeft = batteryTimer.WaitTime;
-		 
+
 	}
 	
 	public override void _Input(InputEvent @event){
@@ -90,6 +95,7 @@ public partial class Player : CharacterBody3D
 		
 	}
 
+
 	public override void _Process(double delta)
 	{
 		HandleFlashlightBattery();
@@ -125,4 +131,5 @@ public partial class Player : CharacterBody3D
 		batteryTimer.Start();
 		EmitSignal(SignalName.BatteryDepleted);
 	}
+
 }
