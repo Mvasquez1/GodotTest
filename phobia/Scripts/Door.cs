@@ -12,7 +12,7 @@ public partial class Door : CsgBox3D
 	private bool interactable = true;
 	private AudioStreamPlayer3D doorCloseSound;
 	private AudioStreamPlayer3D doorOpenSound;
-	private Timer doorTimer;
+	
 
 
 	[Export]

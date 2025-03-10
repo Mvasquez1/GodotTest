@@ -16,13 +16,8 @@ sky_material = SubResource("ProceduralSkyMaterial_0sdxg")
 
 [sub_resource type="Environment" id="Environment_gpycu"]
 background_mode = 2
-
-
-sky = SubResource("Sky_sdv2j")
-tonemap_mode = 3
-sdfgi_enabled = true
-
-
+sky = SubResource("Sky_83lnr")
+tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.668629, 0.668629, 0.668629, 1)

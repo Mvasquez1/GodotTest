@@ -41,4 +41,3 @@ spot_angle_attenuation = 3.0
 [node name="BatteryTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
-
