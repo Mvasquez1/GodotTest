@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3gnk0gi2b2vk"]
+
+[ext_resource type="Texture2D" uid="uid://bmka2l6pdqvt6" path="res://sprites/doortexture.png" id="1_8055h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7sh6"]
+shading_mode = 0
+albedo_texture = ExtResource("1_8055h")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -0.1)
+material_override = SubResource("StandardMaterial3D_e7sh6")
+size = Vector3(1.6, 2.1, 0.3)
