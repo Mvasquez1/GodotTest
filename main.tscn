@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bti0m2rijygpd"]
+
+[ext_resource type="Texture2D" uid="uid://5hla3fw7rfbc" path="res://icon.svg" id="1_a13ei"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21jqo"]
+albedo_texture = ExtResource("1_a13ei")
+
+[node name="MainScene" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_21jqo")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.985154, 0.171671, 0, -0.171671, 0.985154, 0, 1.33637, 4.80733)
