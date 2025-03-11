@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn41q3cofy6kt"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_2xaad"]
+[ext_resource type="Script" path="res://Scripts/Raycast.cs" id="2_egso8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yag4e"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0ac2j"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_2xaad")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(0.999878, -0.0142271, -0.00638064, 0.0142159, 0.999897, -0.00179185, 0.00640548, 0.00170093, 0.999978, 0, 1.53427, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0435162, 0.115861, -0.36116)
+fov = 79.0735
+
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0, -2)
+script = ExtResource("2_egso8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57207, 0)
+shape = SubResource("CapsuleShape3D_yag4e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_0ac2j")
